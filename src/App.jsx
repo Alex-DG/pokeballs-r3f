@@ -80,7 +80,7 @@ function Pokeball({ z }) {
 export default function App({ count = 70, depth = 70 }) {
   return (
     <Canvas
-      gl={{ alpha: false, antialias: false }}
+      gl={{ alpha: false, antialias: true }}
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 10], fov: 20, near: 0.01, far: depth + 20 }}
     >
