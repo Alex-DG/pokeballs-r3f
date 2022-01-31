@@ -61,9 +61,10 @@ export default function App({ count = 70, depth = 70 }) {
       <Suspense fallback={null}>
         <Environment preset='sunset' />
 
-        {Array.from({ length: count }, (_, i) => (
-          <Pokeball key={i} z={-(i / count) * depth - 25} />
-        ))}
+        {Array.from({ length: count }, (_, i) => {
+          const zSpread = -(i / count) * depth - 25 // function of the depth and then offset by - 25 so the 3d models are not too close
+          return <Pokeball key={i} z={zSpread} />
+        })}
 
         <EffectComposer multisampling={0}>
           <DepthOfField
